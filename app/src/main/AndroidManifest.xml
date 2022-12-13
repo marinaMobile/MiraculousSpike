@@ -5,7 +5,6 @@
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -13,28 +12,35 @@
         android:theme="@style/Theme.MiraculousSpike"
         tools:targetApi="32">
         <activity
-            android:name=".ThreeGame"
+            android:name=".two.WarninsScreen"
+            android:noHistory="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".two.ThreeGame"
+            android:noHistory="true"
+            >
+
+        </activity>
+        <activity
+            android:name=".three.TwoGame"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".TwoGame"
+            android:name=".one.OneGame"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".OneGame"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".four.MainActivity"
+            android:name=".two.StartScreen"
+            android:noHistory="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

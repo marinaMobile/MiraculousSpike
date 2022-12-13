@@ -7,6 +7,6 @@ import com.aqupepgames.projectp.R
 class OneGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(Rgot.layout.activity_one_game)
+        setContentView(R.layout.activity_one_game)
     }
 }
