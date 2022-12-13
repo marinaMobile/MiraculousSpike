@@ -13,6 +13,27 @@
         android:theme="@style/Theme.MiraculousSpike"
         tools:targetApi="32">
         <activity
+            android:name=".ThreeGame"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TwoGame"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".OneGame"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".four.MainActivity"
             android:exported="true">
             <intent-filter>
