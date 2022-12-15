@@ -7,4 +7,6 @@ import com.google.gson.annotations.SerializedName
 data class CodeData(
     @SerializedName("countryCode")
     val countryCode: String,
+    @SerializedName("country")
+    val country: String
 )
