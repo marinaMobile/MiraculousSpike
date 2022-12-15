@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sasha_bkg_start"
+    android:background="@drawable/backmain"
     tools:context=".one.PlayGaaaameFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -196,7 +196,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerInside"
-        android:src="@drawable/sasha_vheeeel"
+        android:src="@drawable/sasha_vheel_2"
         app:layout_constraintBottom_toBottomOf="@id/guideline_hor_80"
         app:layout_constraintDimensionRatio="1,1"
         app:layout_constraintEnd_toEndOf="@id/guideline_vert_90"

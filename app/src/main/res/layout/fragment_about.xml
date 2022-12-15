@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/sasha_bkg_start"
+    android:background="@drawable/backmain"
     android:layout_height="match_parent"
     tools:context=".one.AboutFragment">
 
@@ -149,9 +149,11 @@ Is grounds Newport a root called and include situation. A functions spelt a mode
 
     </ScrollView>
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_understand_game_rules"
         android:layout_width="0dp"
+        android:background="@drawable/sasha_btn_2"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat_black"
         android:text="accept"

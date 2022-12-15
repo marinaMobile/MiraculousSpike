@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/sasha_bkg_start"
+    android:background="@drawable/backmain"
     android:layout_height="match_parent"
     tools:context=".one.BestScoresFragment">
 
@@ -152,9 +152,11 @@
     </androidx.cardview.widget.CardView>
 
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_go_understand"
         android:layout_width="0dp"
+        android:background="@drawable/sasha_btn_2"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/montserrat_black"
