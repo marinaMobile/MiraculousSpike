@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_sec_gm"
+    android:background="@drawable/sec_item_bg"
     tools:context=".two.WarninsScreen">
 
     <ImageView
@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sc_gm_item_1" />
+        app:srcCompat="@drawable/sec_item_1" />
 
     <TextView
         android:id="@+id/textView3"
