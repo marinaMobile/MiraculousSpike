@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
            viewMainModel.jobMain.join()
         }
 
-
         viewMainModel.initAppsFlyerLib(this@MainActivity)
 
 
