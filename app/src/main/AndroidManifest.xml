@@ -12,18 +12,25 @@
         android:theme="@style/Theme.MiraculousSpike"
         tools:targetApi="32">
         <activity
-            android:name=".two.WarninsScreen"
+            android:name=".two.RecordsScreen"
             android:noHistory="true"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".two.ThreeGame"
-            android:noHistory="true"
-            >
-
+        <activity
+            android:name=".two.WarninsScreen"
+            android:exported="false"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name=".two.ThreeGame"
+            android:noHistory="true"
+            />
         <activity
             android:name=".three.TwoGame"
             android:exported="false">
@@ -40,8 +47,8 @@
         </activity>
         <activity
             android:name=".two.StartScreen"
-            android:noHistory="true"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

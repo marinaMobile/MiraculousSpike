@@ -4,6 +4,35 @@ import com.aqupepgames.projectp.R
 
 object TwoUtils {
 
+
+
+    val listSecNames = listOf(
+        "Gerald",
+        "Tomas",
+        "Andrew",
+        "Egor",
+        "Ivan",
+        "Mykola",
+        "Sasha",
+        "Victor",
+        "Dima",
+
+
+    )
+
+    val listSecWin = listOf(
+        "1289",
+        "450",
+        "840",
+        "3200",
+        "4500",
+        "1338",
+        "120",
+        "780",
+        "663",
+        )
+
+
     val listBonus = listOf(
         0.1,
         0.2,

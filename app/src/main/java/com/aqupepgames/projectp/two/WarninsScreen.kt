@@ -16,9 +16,12 @@ class WarninsScreen : AppCompatActivity() {
         setContentView(hdysu.root)
         sharedPreferences = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val currentWin = sharedPreferences.getInt("win_res",0)
-        hdysu.tvWin.text = "Win : $currentWin"
+        hdysu.riijd.text = "Win : $currentWin"
         hdysu.bCnt.setOnClickListener {
             startActivity(Intent(this,ThreeGame::class.java))
+        }
+        hdysu.button2.setOnClickListener {
+            startActivity(Intent(this,RecordsScreen::class.java))
         }
     }
 }
