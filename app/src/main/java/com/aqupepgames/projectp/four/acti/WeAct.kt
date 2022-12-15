@@ -276,8 +276,7 @@ class WeAct : AppCompatActivity() {
         val sisisisifsisis = "sub_id_6="
 
 
-//        val fifififiififififiififififiififififi = "http://"
-//        val seccscdssdd = "powerofshadow.xyz/go.php?to=2&"
+
 
         val lololololololo = "naming"
 

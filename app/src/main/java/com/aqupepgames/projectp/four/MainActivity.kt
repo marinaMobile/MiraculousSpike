@@ -26,18 +26,9 @@ class MainActivity : AppCompatActivity() {
            viewMainModel.jobMain.join()
         }
 
-//        viewMainModel.checkGrek()
 
         viewMainModel.initAppsFlyerLib(this@MainActivity)
 
-
-
-//        lifecycleScope.launch{
-//            viewMainModel.getDataVil()
-//            viewMainModel.getData()
-//            viewMainModel.checkGrek()
-//            viewMainModel.initAppsFlyerLib(this@MainActivity)
-//        }
 
         viewMainModel.currentMode.observe(this) {
             Log.d("CURRENTMODE", "onCreate: ${viewMainModel.currentMode}")

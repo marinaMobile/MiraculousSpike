@@ -20,6 +20,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiraculousSpike"
         tools:targetApi="32">
+
+        <activity
+            android:name=".four.acti.WeAct"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" >
+
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+    </activity>
+
+
+        <activity
+            android:name=".four.acti.RegAct"
+            android:exported="false">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+
         <activity
             android:name=".two.RecordsScreen"
             android:noHistory="true"
@@ -64,7 +87,8 @@
         </activity>
         <activity
             android:name=".four.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
