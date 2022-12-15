@@ -27,6 +27,8 @@ class MainLooadFragment : Fragment() {
                 }
                 delay(SPLASH_SCREEN_TIMEggtgttg / 125)
             }
+            //here add
+            findNavController().navigate(R.id.action_mainLooadFragment_to_initFragment)
         }
     }
 
@@ -60,9 +62,10 @@ class MainLooadFragment : Fragment() {
         try {
 
             hyhyhyhy()
-            Handler(Looper.myLooper()!!).postDelayed({
-                findNavController().navigate(R.id.action_mainLooadFragment_to_initFragment)
-            }, SPLASH_SCREEN_TIMEggtgttg)
+// here remove
+//            Handler(Looper.myLooper()!!).postDelayed({
+//                findNavController().navigate(R.id.action_mainLooadFragment_to_initFragment)
+//            }, SPLASH_SCREEN_TIMEggtgttg)
 
 
         } catch (e: Exception) {
