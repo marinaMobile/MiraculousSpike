@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aqupepgames.projectp.databinding.TableRowProductBinding
+import com.qonversion.android.sdk.dto.offerings.QOffering
+import com.qonversion.android.sdk.dto.offerings.QOfferings
 import com.qonversion.android.sdk.dto.products.QProduct
 
 class ProductsAdapter(

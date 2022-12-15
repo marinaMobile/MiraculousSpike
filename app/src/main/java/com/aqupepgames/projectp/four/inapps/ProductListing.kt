@@ -2,13 +2,10 @@ package com.aqupepgames.projectp.four.inapps
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.ActivityProductListingBinding
-import com.aqupepgames.projectp.databinding.ActivityRegBinding
 import com.qonversion.android.sdk.Qonversion
 import com.qonversion.android.sdk.Qonversion.purchase
 import com.qonversion.android.sdk.QonversionError
@@ -49,6 +46,7 @@ class ProductListing : AppCompatActivity() {
 
             override fun onError(error: QonversionError) {
                 Toast.makeText(this@ProductListing, error.description, Toast.LENGTH_LONG).show()
+
             }
         })
     }
