@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.ActivityRegBinding
+import com.aqupepgames.projectp.four.inapps.ProductListing
 import com.aqupepgames.projectp.one.OneGame
 import com.aqupepgames.projectp.two.StartScreen
 
@@ -21,6 +22,10 @@ class RegAct : AppCompatActivity() {
 
         binding.twoBtn.setOnClickListener {
             startActivity(Intent(this, StartScreen::class.java))
+        }
+
+        binding.shopBtn.setOnClickListener{
+            startActivity(Intent(this, ProductListing::class.java))
         }
     }
 }
