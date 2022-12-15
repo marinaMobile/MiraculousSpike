@@ -21,21 +21,25 @@
         android:theme="@style/Theme.MiraculousSpike"
         tools:targetApi="32">
         <activity
-            android:name=".two.ThreeGame"
+            android:name=".two.RecordsScreen"
+            android:noHistory="true"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".two.WarninsScreen"
+            android:exported="false"
+            android:noHistory="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".two.ThreeGame"
             android:noHistory="true"
-            android:exported="false">
-        <meta-data
-            android:name="android.app.lib_name"
-            android:value="" />
-
+            />
         <activity
             android:name=".three.TwoGame"
             android:exported="false">
@@ -50,7 +54,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".two.StartScreen"
             android:noHistory="true"
