@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("CURRENTMODE", "onCreate: ${viewMainModel.currentMode}")
             when (it) {
                 SortClass.REAL_START -> {
-                    Toast.makeText(this, "${viewMainModel.appsCh}, ${viewMainModel.linka}, ${viewMainModel.couData}", Toast.LENGTH_SHORT).show()
                     startWeb()
                 }
                 SortClass.MODERATION -> {

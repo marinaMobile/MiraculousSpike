@@ -79,42 +79,25 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
 
         val res = devRepo.getDataDev().body()
         val linka = devRepo.getDataDev().body()?.view.toString()
-//
-//        _geoC.postValue(geoC)
-//        _apppppsCh.postValue(papas)
-//        _linka.postValue(linka)
+
 
         shP.edit().putString(Constant.link, linka).apply()
         shP.edit().putString(Constant.appsCheckChe, res!!.appsChecker).apply()
 
 
-        Log.d("DataVil", "getDataVil: $res")
 
         return res
-//            shP.edit().putString(Constant.geoCo, geoC).apply()
-//            shP.edit().putString(Constant.appsCheckChe, papas).apply()
 
-
-//        _villainAnswer.postValue(res)
-//
-//        Log.d("DataVil", "getDataVil: $villainAnswer")
 
     }
 
 
     val jobMain: Job = GlobalScope.launch {
-//        suspend fun checkGrek() {
-//        val check: String? = shP.getString(Constant.appsCheckChe, null)
-//        val vilGeo: String? = shP.getString(Constant.geoCo, "null")
-//        val userGeo: String? = shP.getString(userCo, null)
 
-//        val check = appsCh.value.toString()
             val vilGeo = getDataVil().geo
             val userGeo = getData()
             val check = getDataVil().appsChecker
-//        val vilGeo = geoC.value.toString()
-//        val userGeo = couData.value.toString()
-//        val link = linka.value.toString()
+
 
 
             Log.d("DataCheckGrek", "checkGrek: $check, $vilGeo, $userGeo")
@@ -126,8 +109,9 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
             when (check) {
                 "1" ->
                     executorService.scheduleAtFixedRate({
-                        Log.d("AppsChecker", "$appsCamp ")
                         if (appsCamp != null) {
+                            executorService.shutdownNow()
+                            Log.d("AppsChecker", "$appsCamp ")
                             if (appsCamp!!.contains("tdb2") || vilGeo.contains(userGeo)) {
                                 _currentMode.postValue(SortClass.REAL_START)
                                 Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
@@ -136,10 +120,10 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
                                 Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
                             }
                         } else {
-                            appsCamp = shP.getString("apps", null)
+                            appsCamp = shP.getString(Constant.C1, null)
                             Log.d("AppsCheckerNulled", "$appsCamp")
                         }
-                    }, 0, 2, TimeUnit.SECONDS)
+                    }, 0, 1, TimeUnit.SECONDS)
                 else ->
                     if (userGeo.let { vilGeo.contains(it) }) {
                         _currentMode.postValue(SortClass.REAL_START_NO_APPS)
@@ -158,7 +142,7 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
     private fun getAdvertisingIdClient() {
         val advertisingIdClient = AdvertisingIdClient(application)
         advertisingIdClient.start()
-        val idUserAdvertising = advertisingIdClient.info.id ?: "null"
+        val idUserAdvertising = advertisingIdClient.info.id
 //        _advertisingIdClient.postValue(idUserAdvertising)
         shP.edit().putString(Constant.MAIN_ID, idUserAdvertising).apply()
         Log.d("getAdID", "getAdId: $idUserAdvertising")
