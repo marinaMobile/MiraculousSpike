@@ -27,6 +27,15 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".two.WarninsScreen"
+            android:noHistory="true"
+            android:exported="false">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+
         <activity
             android:name=".three.TwoGame"
             android:exported="false">
@@ -36,6 +45,15 @@
         </activity>
         <activity
             android:name=".one.OneGame"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".two.StartScreen"
+            android:noHistory="true"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
