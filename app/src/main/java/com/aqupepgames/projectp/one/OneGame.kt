@@ -9,4 +9,8 @@ class OneGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_one_game)
     }
+
+    companion object{
+        var currentBalance = 5000
+    }
 }

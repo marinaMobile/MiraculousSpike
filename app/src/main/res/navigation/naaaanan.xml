@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/naaaanan"
+    app:startDestination="@id/mainLooadFragment">
+
+    <fragment
+        android:id="@+id/initFragment"
+        android:name="com.aqupepgames.projectp.one.InitFragment"
+        android:label="fragment_init"
+        tools:layout="@layout/fragment_init" >
+        <action
+            android:id="@+id/action_initFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_initFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_initFragment_to_bestScoresFragment"
+            app:destination="@id/bestScoresFragment" />
+        <action
+            android:id="@+id/action_initFragment_to_playGaaaameFragment"
+            app:destination="@id/playGaaaameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.aqupepgames.projectp.one.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/playGaaaameFragment"
+        android:name="com.aqupepgames.projectp.one.PlayGaaaameFragment"
+        android:label="fragment_play_gaaaame"
+        tools:layout="@layout/fragment_play_gaaaame" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.aqupepgames.projectp.one.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/bestScoresFragment"
+        android:name="com.aqupepgames.projectp.one.BestScoresFragment"
+        android:label="fragment_best_scores"
+        tools:layout="@layout/fragment_best_scores" />
+    <fragment
+        android:id="@+id/mainLooadFragment"
+        android:name="com.aqupepgames.projectp.one.MainLooadFragment"
+        android:label="fragment_main_looad"
+        tools:layout="@layout/fragment_main_looad" >
+        <action
+            android:id="@+id/action_mainLooadFragment_to_initFragment"
+            app:destination="@id/initFragment" />
+    </fragment>
+</navigation>
