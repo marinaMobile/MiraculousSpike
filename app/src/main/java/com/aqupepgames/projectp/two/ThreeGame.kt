@@ -27,7 +27,8 @@ class ThreeGame : AppCompatActivity() {
         b_sec = ActivityThreeGameBinding.inflate(layoutInflater)
         setContentView(b_sec.root)
         totalSharedPref = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-       // totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 0)
+       // totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 1000)
+
         b_sec.tvSecBalance.text = "Balance : $totalBalance"
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val def_txt_win = sharedPreference.getInt("win_res",winRes)
@@ -83,38 +84,61 @@ class ThreeGame : AppCompatActivity() {
         val img_1 = TwoUtils.imgLis[Random.nextInt(6)]
         val img_2 = TwoUtils.imgLis[Random.nextInt(6)]
         val img_3 = TwoUtils.imgLis[Random.nextInt(6)]
-        if(img_1 == 3 || img_2 == 5 || img_3 == 6){
-            totalBalance = totalBalance?.minus(100)
-           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
-        }
-        if(img_1 == 2 || img_2 ==3 || img_3 == 4){
-            totalBalance = totalBalance?.plus(10)
-          //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
-        }
-        if(img_1 == 1 && img_2 == 1 && img_3 ==1) {
-            totalBalance = totalBalance?.plus(20)
-          //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
+
+
+        if(totalBalance!! >0){
+            val random = (1..5).random()
+            if(random ==1){
+                if(totalBalance!! > 0){
+                    totalBalance = totalBalance?.minus(300)
+                }
+
+                tvSecBalance.text = "Balance : $totalBalance"
+            }
+            else if(random == 2){
+                if(totalBalance!!>0){
+                    totalBalance = totalBalance?.plus(25)
+                }
+
+                tvSecBalance.text = "Balance : $totalBalance"
+            } else if(random ==3){
+                if(totalBalance!!>0){
+                    totalBalance = totalBalance?.minus(100)
+                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
+
+                tvSecBalance.text = "Balance : $totalBalance"
+            } else if(random == 4){
+
+                tvSecBalance.text = "Balance : $totalBalance"
+                if(totalBalance!!>0){
+                    totalBalance = totalBalance?.plus(30)
+                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
+
+            }
+            else if(random == 5){
+                if(totalBalance!!>0){
+                    totalBalance = totalBalance?.minus(75)
+                   // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
+
+                tvSecBalance.text = "Balance : $totalBalance"
+            }
+
+            else if(random == 6){
+                if(totalBalance!!>0){
+                    totalBalance = totalBalance?.plus(5)
+                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
+
+                tvSecBalance.text = "Balance : $totalBalance"
+            }
+        } else {
+            totalBalance = 0
         }
 
-        if (img_1 ==3 && img_2 ==3 && img_3 == 3){
-            totalBalance = totalBalance?.minus(300)
-           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
-        }
-        if(img_1 == 2 && img_2 == 1 || img_3 == 4 && img_1 == 5){
-            totalBalance = totalBalance?.minus(250)
-           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
-        }
 
-        if(img_1 == 3 && img_2 == 4 || img_3 == 6 && img_1 == 5){
-            totalBalance = totalBalance?.plus(30)
-           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-            tvSecBalance.text = "Balance : $totalBalance"
-        }
         val totalWin = totalBalance?.times(bonus_res)
         val parse_total = totalWin?.toInt()
         totalWin?.toInt()?.let { sharedPreference.edit().putInt("win_res", it).apply() }
@@ -123,42 +147,12 @@ class ThreeGame : AppCompatActivity() {
         img2SecGm.setImageResource(img_2)
         img3SecGm.setImageResource(img_3)
         tvSecBonus.text = "Bonus : x$bonus_res"
-
         if(warningsscr == 0){
             startActivity(Intent(this@ThreeGame,WarninsScreen::class.java))
         }
 
 
 
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-
-        val finalBalanceString = b_sec.tvSecBalance.text.toString()
-        val finalBalance = finalBalanceString.toInt()
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-       // totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
-
-       // startActivity(Intent(this, RegAct::class.java))
-        finish()
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        val finalBalanceString = b_sec.tvSecBalance.text.toString()
-        val finalBalance = finalBalanceString.toInt()
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-      //  totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        val finalBalanceString = b_sec.tvSecBalance.text.toString()
-        val finalBalance = finalBalanceString.toInt()
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-       // totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
     }
 
 }
