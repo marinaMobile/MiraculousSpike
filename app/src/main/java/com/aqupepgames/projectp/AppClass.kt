@@ -45,6 +45,10 @@ class AppClass :Application(){
             shP.edit().putString(myId, IDIN).apply()
             shP.edit().putString(Constant.instId, instID).apply()
             settings.edit().putBoolean("my_first_time", false).apply()
+
+            //total_balance_payout
+            val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+            totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(),1000).apply()
         } else {
             val shIDIN = shP.getString(myId, IDIN)
             trackerParams.setCustomUserId(shIDIN)
@@ -69,9 +73,7 @@ class AppClass :Application(){
         Qonversion.setDebugMode()
         Qonversion.launch(this, "pdrBIx6s7ZqTvDobWUFqTx3YONn97_tv", false)
 
-        //total_balance_payout
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(),1000).apply()
+
 
     }
 

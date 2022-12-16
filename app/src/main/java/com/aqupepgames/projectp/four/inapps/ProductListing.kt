@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.aqupepgames.projectp.AppClass
 import com.aqupepgames.projectp.databinding.ActivityProductListingBinding
 import com.qonversion.android.sdk.Qonversion
 import com.qonversion.android.sdk.Qonversion.purchase
@@ -40,7 +41,13 @@ class ProductListing : AppCompatActivity() {
                 mainProducts?.let {
                     binding.recyclerViewProductsList.adapter = ProductsAdapter(it) { product ->
                         purchase(product)
+                        if (product.qonversionID.equals("coin_offer_s")){
+                            val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+                            val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
+                            totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+200).apply()
+                        }
                     }
+
                 } ?:  Toast.makeText(this@ProductListing, "There are no products in main offering", Toast.LENGTH_LONG).show()
             }
 
@@ -57,6 +64,8 @@ class ProductListing : AppCompatActivity() {
             QonversionPermissionsCallback {
             override fun onSuccess(entitlements: Map<String, QPermission>) {
                 Toast.makeText(this@ProductListing, "Purchase succeeded", Toast.LENGTH_LONG).show()
+
+
             }
 
             override fun onError(error: QonversionError) {

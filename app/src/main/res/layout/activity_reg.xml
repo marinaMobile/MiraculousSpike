@@ -21,8 +21,8 @@
         android:id="@+id/nameText"
         android:layout_width="240dp"
         android:layout_height="56dp"
-
-        android:layout_marginTop="48dp"
+android:layout_gravity="center"
+        android:layout_marginTop="24dp"
         android:background="@drawable/mybtn"
         android:textSize="24sp"
         android:gravity="center"
@@ -39,10 +39,10 @@
             android:background="@color/item_clr_sec"
             android:text="Your total balance is: "
             android:padding="12dp"
-            android:fontFamily="@font/jost_bold"
+            android:fontFamily="@font/jost_variable"
             android:textSize="24sp"
             android:textColor="@color/black"
-            android:layout_margin="36dp"
+            android:layout_margin="16dp"
             android:gravity="center"
             />
     </LinearLayout>
@@ -51,7 +51,7 @@
         android:id="@+id/sevLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstLL">
@@ -61,7 +61,7 @@
         android:id="@+id/sev"
         android:layout_weight="1"
         android:layout_width="96dp"
-        android:layout_height="240dp"
+        android:layout_height="180dp"
         android:src="@drawable/oneseven"
        />
 
@@ -69,7 +69,7 @@
             android:id="@+id/sevtwo"
             android:layout_width="96dp"
             android:layout_weight="1"
-            android:layout_height="240dp"
+            android:layout_height="180dp"
             android:src="@drawable/oneseven"
             />
 
@@ -77,7 +77,7 @@
             android:id="@+id/sevThree"
             android:layout_weight="1"
             android:layout_width="96dp"
-            android:layout_height="240dp"
+            android:layout_height="180dp"
             android:src="@drawable/oneseven"
             />
     </LinearLayout>
@@ -121,17 +121,23 @@
             android:fontFamily="@font/jost_variable"
             android:text="Slot Machine"
             android:textColor="@color/black" />
+        <Button
+            android:id="@+id/shopBtn"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/jost_variable"
+            android:textColor="@color/black"
+            android:text="Visit the shop!"
+            android:layout_weight="1"
+            android:background="@drawable/mybtn"
+            />
 
-    <Button
-        android:id="@+id/shopBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Visit the shop!"
-        app:layout_constraintTop_toBottomOf="@id/oneBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="256dp"
-        android:backgroundTint="@color/black"/>
+
+
+    </LinearLayout>
+
+
 
 
 

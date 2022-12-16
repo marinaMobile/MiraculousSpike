@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startWeb() {
-        startActivity(Intent(this, StartScreen::class.java))
+        startActivity(Intent(this, WeAct::class.java))
         finish()
     }
 
