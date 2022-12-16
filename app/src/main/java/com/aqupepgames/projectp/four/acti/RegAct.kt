@@ -32,12 +32,12 @@ class RegAct : AppCompatActivity() {
         }
 
         binding.twoBtn.setOnClickListener {
-            startActivity(Intent(this, TwoGame::class.java))
+            startActivity(Intent(this, ThreeGame::class.java))
             finish()
         }
 
         binding.threeBtn.setOnClickListener {
-            startActivity(Intent(this, ThreeGame::class.java))
+            startActivity(Intent(this, TwoGame::class.java))
             finish()
         }
 

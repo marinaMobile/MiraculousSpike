@@ -62,8 +62,7 @@ class TwoGame : AppCompatActivity() {
                 if (rnds == 1){
                     totalBalance = totalBalance?.plus(scoreInt*2)
                     bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
-                    Toast.makeText(this, "Black! You have won!", Toast.LENGTH_SHORT).show()
-
+                    bindMachineGame.gameStatusTextView.text = "Black! You have won!"
                 }
             } else {
                 Toast.makeText(this, "Your balance is 0", Toast.LENGTH_SHORT).show()
@@ -83,9 +82,7 @@ class TwoGame : AppCompatActivity() {
                 if (rnds == 1){
                     totalBalance = totalBalance?.plus(scoreInt*2)
                     bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
-                    Toast.makeText(this, "Red! You have won!", Toast.LENGTH_SHORT).show()
-
-
+                    bindMachineGame.gameStatusTextView.text = "Red! You have won!"
                 }
 
             } else {

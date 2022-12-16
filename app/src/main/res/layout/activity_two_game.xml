@@ -15,6 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardViewWithB"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/jost_variable"
         android:text="Your total balance is: "
         android:textColor="@color/white"
         android:textSize="21sp"/>
@@ -123,5 +124,19 @@
 
 
     </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gameStatusTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wheeeel"
+        android:layout_marginTop="16dp"
+        android:text="Your outcome will be shown here!"
+        android:fontFamily="@font/jost_variable"
+        android:textColor="@color/white"
+        android:textSize="21sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
