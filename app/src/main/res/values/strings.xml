@@ -8,4 +8,5 @@
     <string name="description">Description</string>
     <string name="price">Price</string>
     <string name="offerings">Main Offering products</string>
+    <string name="text_ruuuuules">To start playing, your balance must be greater than 0 and greater than your current bet. the game consists of the following stages: - selection of the bet size; - game; -result. \nIn choosing the size of the bet, you can reduce or increase your own bet by the power of 10. By pressing the Open Cards button, you start the game. \nThe result of the game can be your victory or your defeat. If the card in front of you matches your card, you win, if not, you lose. \nThe result of the game will be calculated as follows:f you won, the amount of your bet will be added to your balance, if you lost, your balance will be reduced by the amount of the bet.</string>
 </resources>
