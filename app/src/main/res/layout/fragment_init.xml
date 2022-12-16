@@ -46,42 +46,38 @@
 
     <ImageView
         android:id="@+id/img_titple_gamefrrfr"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:scaleType="centerInside"
-        android:src="@drawable/sasha_loading_logo"
-       app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/sasha_logo_22"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_game_naaame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/montserrat_black"
-        android:gravity="center"
-        android:lines="1"
-        android:text="@string/app_name"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toTopOf="@id/img_titple_gamefrrfr"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95gtgtt"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_05gt"
-        app:layout_constraintVertical_chainStyle="packed" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/slot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_titple_gamefrrfr"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_95gttg"/>
+
+
 
     <ImageView
         android:id="@+id/imgsettings"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="centerInside"
-        android:src="@drawable/sasha_settings"
+        android:src="@drawable/sasha_set"
         app:layout_constraintEnd_toStartOf="@id/img_info"
         app:layout_constraintStart_toStartOf="@id/guideline_vert_05gt"
-        app:layout_constraintTop_toBottomOf="@id/img_titple_gamefrrfr"
-        app:layout_constraintBottom_toTopOf="@id/btn_play_gameeee"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline_hor_05gt" />
 
     <ImageView
         android:id="@+id/img_info"
@@ -91,36 +87,52 @@
         android:src="@drawable/sasha_info"
         app:layout_constraintStart_toEndOf="@id/imgsettings"
         app:layout_constraintEnd_toStartOf="@id/imleader"
-        app:layout_constraintTop_toBottomOf="@id/img_titple_gamefrrfr"
-        app:layout_constraintBottom_toTopOf="@id/btn_play_gameeee"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline_hor_05gt" />
 
     <ImageView
         android:id="@+id/imleader"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="centerInside"
-        android:src="@drawable/sasha_podium"
+        android:src="@drawable/teamwork"
         app:layout_constraintStart_toEndOf="@id/img_info"
+        app:layout_constraintEnd_toStartOf="@id/clooose"
+        app:layout_constraintTop_toBottomOf="@id/guideline_hor_05gt" />
+
+    <ImageView
+        android:id="@+id/clooose"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/sasha_close"
+        app:layout_constraintStart_toEndOf="@id/imleader"
         app:layout_constraintEnd_toEndOf="@id/guideline_vert_95gtgtt"
-        app:layout_constraintTop_toBottomOf="@id/img_titple_gamefrrfr"
-        app:layout_constraintBottom_toTopOf="@id/btn_play_gameeee"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline_hor_05gt" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_play_gameeee"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/sasha_btn_2"
-        android:fontFamily="@font/montserrat_black"
-        android:text="play game"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBottomOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_95gttg"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95gtgtt"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_05gt"
-        app:layout_constraintVertical_chainStyle="packed" />
+    <ImageView
+        android:id="@+id/img_next"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingEnd="16dp"
+        android:rotation="180"
+        android:src="@drawable/sasha_fortune_elem_pointer"
+        app:layout_constraintTop_toTopOf="@id/img_titple_gamefrrfr"
+        app:layout_constraintBottom_toBottomOf="@id/img_titple_gamefrrfr"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95gtgtt"/>
+
+    <ImageView
+        android:id="@+id/img_previous"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingEnd="16dp"
+        android:src="@drawable/sasha_fortune_elem_pointer"
+        app:layout_constraintTop_toTopOf="@id/img_titple_gamefrrfr"
+        app:layout_constraintBottom_toBottomOf="@id/img_titple_gamefrrfr"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05gt"/>
+
+
+
 
 
     <TextView
@@ -137,6 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor_95gttg" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

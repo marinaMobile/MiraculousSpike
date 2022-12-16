@@ -110,6 +110,20 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vert_40"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -164,67 +178,9 @@
         style="@style/guideline_simple_style_horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
-    <ImageView
-        android:id="@+id/btn_img_exit_vheel_game"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/sasha_close"
-        app:layout_constraintBottom_toBottomOf="@id/tv_title_game_fortune"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_90"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_80"
-        app:layout_constraintTop_toTopOf="@id/tv_title_game_fortune" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_title_game_fortune"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:gravity="center"
-        android:textSize="28sp"
-        android:textColor="@color/white"
-        android:textAllCaps="true"
-        android:fontFamily="@font/montserrat_black"
-        android:text="Miraculous\nSpike"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_18"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_75"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_25"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_5" />
-
-
-    <ImageView
-        android:id="@+id/img_wheel_element_main"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/sasha_vheel_2"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_80"
-        app:layout_constraintDimensionRatio="1,1"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_90"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_10"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_30" />
-
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/tv_inside_wheel"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:autoSizeTextType="uniform"-->
-<!--        android:fontFamily="@font/montserrat_black"-->
-<!--        android:gravity="center"-->
-<!--        android:lines="2"-->
-<!--        android:maxLines="2"-->
-<!--        android:text="win"-->
-<!--        android:textAllCaps="true"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="35sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/game_pointer_fortune"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/guideline_vert_60"-->
-<!--        app:layout_constraintStart_toStartOf="@id/guideline_vert_40"-->
-<!--        app:layout_constraintTop_toTopOf="@id/game_pointer_fortune" />-->
-
 
     <TextView
-        android:id="@+id/user_score_count"
+        android:id="@+id/tv_user_score_count"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
@@ -235,11 +191,11 @@
         android:maxLines="1"
         android:padding="4dp"
         android:textAllCaps="true"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_26"
+        android:textColor="#F4CEB2"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_10"
         app:layout_constraintEnd_toEndOf="@id/guideline_vert_90"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_70"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_19"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_60"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_5"
         tools:text="555555" />
 
     <TextView
@@ -247,51 +203,149 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="true"
+        android:textColor="#F4CEB2"
+        android:fontFamily="@font/montserrat_black"
+        android:text="your bet:"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_5" />
+
+    <TextView
+        android:id="@+id/tv_user_bet_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:fontFamily="@font/montserrat_black"
-        android:text="your score:"
-        android:textSize="19sp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_25"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_60"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_20" />
+        android:text="1000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintTop_toBottomOf="@id/add_bet"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/tv_user_bet_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textColor="#F4CEB2"
+        android:fontFamily="@font/montserrat_black"
+        android:text="Bet:"
+        android:textSize="16sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_user_bet_number"
+        app:layout_constraintTop_toBottomOf="@id/add_bet"
+        android:layout_marginTop="32dp"/>
 
 
     <ImageView
-        android:id="@+id/game_pointer_fortune"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/add_bet"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:paddingEnd="16dp"
-        android:src="@drawable/sasha_fortune_elem_pointer"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_hor_60"
+        android:src="@drawable/bet"
+        app:layout_constraintBottom_toTopOf="@id/btn_game"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintTop_toBottomOf="@id/player_comp"
+        app:layout_constraintVertical_bias="0.498" />
+
+    <ImageView
+        android:id="@+id/remove_bet"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingEnd="16dp"
+        android:rotation="180"
+        android:src="@drawable/sasha_bet"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintTop_toBottomOf="@id/player_comp"
+        app:layout_constraintBottom_toTopOf="@id/btn_game" />
+
+    <ImageView
+        android:id="@+id/player_comp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/sasha_anonymous"
+        app:layout_constraintTop_toTopOf="@id/guideline_hor_10"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"/>
+
+    <ImageView
+        android:id="@+id/img_elem_1"
+        android:layout_width="120dp"
+        android:contentDescription="ok"
+        android:layout_height="120dp"
+        android:src="@drawable/card"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintTop_toBottomOf="@id/player_comp"
+        app:layout_constraintBottom_toTopOf="@id/img_money"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05" />
+
+    <ImageView
+        android:id="@+id/img_elem_1_back"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="30dp"
+        android:alpha="0"
+        android:src="@drawable/card"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintTop_toBottomOf="@id/player_comp"
+        app:layout_constraintBottom_toTopOf="@id/img_money"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"/>
+    -->
+
+    <ImageView
+        android:id="@+id/img_elem_2"
+        android:layout_width="120dp"
+        android:contentDescription="ok"
+        android:layout_height="120dp"
+        android:src="@drawable/card"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintBottom_toTopOf="@id/btn_game"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05" />
+
+    <ImageView
+        android:id="@+id/img_elem_2_back"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:padding="30dp"
+        android:alpha="0"
+        android:src="@drawable/card"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintBottom_toTopOf="@id/btn_game"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05" />
+
+
+
+    <ImageView
+        android:id="@+id/img_money"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/sasha_money"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_80"
-        app:layout_constraintTop_toTopOf="@id/guideline_hor_51" />
+        app:layout_constraintTop_toBottomOf="@id/player_comp"
+        app:layout_constraintBottom_toTopOf="@id/btn_game"/>
+
+
+
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_game_fortune_spin"
+        android:id="@+id/btn_game"
         style="@style/text_game_fortune_spin_btn_style"
         android:background="@drawable/sasha_btn_custom_game_fortune"
         android:padding="8dp"
-        android:text="spin"
+        android:textColor="#F4CEB2"
+        android:fontFamily="@font/montserrat_black"
+        android:text="open cards"
+        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_hor_93"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vert_75"
-        app:layout_constraintStart_toStartOf="@id/guideline_vert_25"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_95"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_05"
         app:layout_constraintTop_toTopOf="@id/guideline_hor_85" />
 
-    <TextView
-        android:id="@+id/tv_dovn_text_raitlist_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/montserrat_black"
-        android:text="© Miraculous Spike"
-        android:textAllCaps="true"
-        android:textColor="#E1D2F1"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline_hor_95" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
