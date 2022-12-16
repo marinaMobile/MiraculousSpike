@@ -33,6 +33,17 @@
         android:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <Button
+        android:id="@+id/threeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start three"
+        app:layout_constraintTop_toBottomOf="@id/twoBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"/>
+
 
     <Button
         android:id="@+id/twoBtn"
