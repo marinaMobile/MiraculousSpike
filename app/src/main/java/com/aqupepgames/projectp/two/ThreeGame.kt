@@ -27,7 +27,7 @@ class ThreeGame : AppCompatActivity() {
         b_sec = ActivityThreeGameBinding.inflate(layoutInflater)
         setContentView(b_sec.root)
         totalSharedPref = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-       // totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 1000)
+        totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 1000)
 
         b_sec.tvSecBalance.text = "Balance : $totalBalance"
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
@@ -89,7 +89,7 @@ class ThreeGame : AppCompatActivity() {
         if(totalBalance!! >0){
             val random = (1..5).random()
             if(random ==1){
-                if(totalBalance!! > 0){
+                if(totalBalance!! > 300){
                     totalBalance = totalBalance?.minus(300)
                 }
 
@@ -102,9 +102,9 @@ class ThreeGame : AppCompatActivity() {
 
                 tvSecBalance.text = "Balance : $totalBalance"
             } else if(random ==3){
-                if(totalBalance!!>0){
+                if(totalBalance!!>100){
                     totalBalance = totalBalance?.minus(100)
-                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
 
                 tvSecBalance.text = "Balance : $totalBalance"
@@ -113,14 +113,14 @@ class ThreeGame : AppCompatActivity() {
                 tvSecBalance.text = "Balance : $totalBalance"
                 if(totalBalance!!>0){
                     totalBalance = totalBalance?.plus(30)
-                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
 
             }
             else if(random == 5){
-                if(totalBalance!!>0){
+                if(totalBalance!!>75){
                     totalBalance = totalBalance?.minus(75)
-                   // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
 
                 tvSecBalance.text = "Balance : $totalBalance"
@@ -129,7 +129,7 @@ class ThreeGame : AppCompatActivity() {
             else if(random == 6){
                 if(totalBalance!!>0){
                     totalBalance = totalBalance?.plus(5)
-                  //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
 
                 tvSecBalance.text = "Balance : $totalBalance"
@@ -162,5 +162,10 @@ class ThreeGame : AppCompatActivity() {
         //finish()
 
     }
+
+    companion object{
+        var TOTAL_BALANCE = 1000
+    }
+
 
 }
