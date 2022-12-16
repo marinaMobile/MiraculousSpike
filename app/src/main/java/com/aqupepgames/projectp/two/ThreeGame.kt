@@ -109,9 +109,9 @@ class ThreeGame : AppCompatActivity() {
             totalBalance = totalBalance?.plus(75)
             tvSecBalance.text = "Balance : $totalBalance"
         }
-        val totalWin =  extra_chance * bonus_res
-        val parse_total = totalWin.toInt()
-        sharedPreference.edit().putInt("win_res",totalWin.toInt()).apply()
+        val totalWin = totalBalance?.times(bonus_res)
+        val parse_total = totalWin?.toInt()
+        totalWin?.toInt()?.let { sharedPreference.edit().putInt("win_res", it).apply() }
         tvSecWin.text = "Your win : $parse_total"
         img1SecGm.setImageResource(img_1)
         img2SecGm.setImageResource(img_2)
