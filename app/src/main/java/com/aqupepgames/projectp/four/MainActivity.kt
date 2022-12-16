@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
 
         viewMainModel.currentMode.observe(this) {
-            Log.d("CURRENTMODE", "onCreate: ${viewMainModel.currentMode}")
             when (it) {
                 SortClass.REAL_START -> {
                     startWeb()

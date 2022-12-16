@@ -100,7 +100,6 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
 
 
 
-            Log.d("DataCheckGrek", "checkGrek: $check, $vilGeo, $userGeo")
 
             var appsCamp: String? = shP.getString(Constant.C1, null)
             val executorService = Executors.newSingleThreadScheduledExecutor()
@@ -111,26 +110,20 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
                     executorService.scheduleAtFixedRate({
                         if (appsCamp != null) {
                             executorService.shutdownNow()
-                            Log.d("AppsChecker", "$appsCamp ")
                             if (appsCamp!!.contains("tdb2") || vilGeo.contains(userGeo)) {
                                 _currentMode.postValue(SortClass.REAL_START)
-                                Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
                             } else {
                                 _currentMode.postValue(SortClass.MODERATION)
-                                Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
                             }
                         } else {
                             appsCamp = shP.getString(Constant.C1, null)
-                            Log.d("AppsCheckerNulled", "$appsCamp")
                         }
                     }, 0, 1, TimeUnit.SECONDS)
                 else ->
                     if (userGeo.let { vilGeo.contains(it) }) {
                         _currentMode.postValue(SortClass.REAL_START_NO_APPS)
-                        Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
                     } else {
                         _currentMode.postValue(SortClass.MODERATION)
-                        Log.d("VIEWMODEL", "checkGrek: ${currentMode.value.toString()}")
                     }
             }
 
@@ -143,9 +136,7 @@ class ViewMainModel(private val mainRepository: CountryRepo, private val devRepo
         val advertisingIdClient = AdvertisingIdClient(application)
         advertisingIdClient.start()
         val idUserAdvertising = advertisingIdClient.info.id
-//        _advertisingIdClient.postValue(idUserAdvertising)
         shP.edit().putString(Constant.MAIN_ID, idUserAdvertising).apply()
-        Log.d("getAdID", "getAdId: $idUserAdvertising")
 
     }
 

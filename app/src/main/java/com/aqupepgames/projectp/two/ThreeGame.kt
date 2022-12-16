@@ -35,7 +35,7 @@ class ThreeGame : AppCompatActivity() {
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val def_txt_win = sharedPreference.getInt("win_res",winRes)
         b_sec.tvSecWin.text = "Your win : $def_txt_win"
-        if(isClicked== false){
+        if(!isClicked){
             b_sec.tvSecBSpn.setOnClickListener {
                 if(totalBalance!=0){
                     asdasdasdhasdihdsah()
@@ -168,20 +168,20 @@ class ThreeGame : AppCompatActivity() {
          startActivity(Intent(this, RegAct::class.java))
         finish()
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        val finalBalanceString = b_sec.tvSecBalance.text.toString()
-        val finalBalance = finalBalanceString.toInt()
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        val finalBalanceString = b_sec.tvSecBalance.text.toString()
-        val finalBalance = finalBalanceString.toInt()
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        val finalBalanceString = b_sec.tvSecBalance.text.toString()
+//        val finalBalance = finalBalanceString.toInt()
+//        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+//        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        val finalBalanceString = b_sec.tvSecBalance.text.toString()
+//        val finalBalance = finalBalanceString.toInt()
+//        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+//        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
+//    }
 
 }

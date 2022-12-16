@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.*
 import androidx.appcompat.app.AppCompatActivity
 import android.provider.MediaStore
-import android.util.Log
 import android.webkit.*
 import android.widget.Toast
 import com.appsflyer.AppsFlyerLib
@@ -284,7 +283,6 @@ class WeAct : AppCompatActivity() {
         val kiokjjlikjhmkij = Build.VERSION.RELEASE
 
         val linkAB: String? = sharPre.getString(Constant.link, "link")
-//        val lik: String = " http://miraculousspike.live/go.php?to=2&"
 
         var aft = ""
         if (checkFly == "1"){
@@ -297,8 +295,6 @@ class WeAct : AppCompatActivity() {
             pushToOneSignal(myTrId.toString())
         }
 
-        Log.d("TESTAG", "Test Result $aft")
-//        pushToOneSignal(myTrID.toString())
         return spoon.getString("SAVED_URL", aft).toString()
     }
 
