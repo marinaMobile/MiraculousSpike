@@ -18,7 +18,7 @@
         android:fontFamily="@font/jost_variable"
         android:text="Your total balance is: "
         android:textColor="@color/white"
-        android:textSize="21sp"/>
+        android:textSize="28sp"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
