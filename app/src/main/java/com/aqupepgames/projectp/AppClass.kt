@@ -23,6 +23,10 @@ import com.qonversion.android.sdk.Qonversion
 
 class AppClass :Application(){
 
+    companion object{
+        var TOTAL_BALANCE = 1000
+    }
+
 
     override fun onCreate() {
 
@@ -64,6 +68,11 @@ class AppClass :Application(){
 
         Qonversion.setDebugMode()
         Qonversion.launch(this, "pdrBIx6s7ZqTvDobWUFqTx3YONn97_tv", false)
+
+        //total_balance_payout
+        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+        totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(),1000).apply()
+
     }
 
 

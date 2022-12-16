@@ -41,7 +41,7 @@ class ProductsAdapter(
         }
 
         fun bind(product: QProduct) = with(itemView) {
-            binding.txtName.setImageResource(R.drawable.sc_gm_item_1)
+            binding.txtName.setImageResource(R.drawable.four)
             binding.txtDescription.text = product.skuDetail?.description
             binding.txtPrice.text = product.skuDetail?.price
         }
