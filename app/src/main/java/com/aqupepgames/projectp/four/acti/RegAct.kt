@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.ActivityRegBinding
 import com.aqupepgames.projectp.one.OneGame
+import com.aqupepgames.projectp.three.TwoGame
 import com.aqupepgames.projectp.two.StartScreen
 
 class RegAct : AppCompatActivity() {
@@ -20,7 +21,7 @@ class RegAct : AppCompatActivity() {
         }
 
         binding.twoBtn.setOnClickListener {
-            startActivity(Intent(this, StartScreen::class.java))
+            startActivity(Intent(this, TwoGame::class.java))
         }
     }
 }

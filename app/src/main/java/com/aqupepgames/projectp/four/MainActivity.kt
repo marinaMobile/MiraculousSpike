@@ -11,6 +11,7 @@ import com.aqupepgames.projectp.four.acti.RegAct
 import com.aqupepgames.projectp.four.acti.WeAct
 import com.aqupepgames.projectp.four.utils.SortClass
 import com.aqupepgames.projectp.four.vm.ViewMainModel
+import com.aqupepgames.projectp.two.StartScreen
 import kotlinx.coroutines.*
 import okhttp3.internal.wait
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startWeb() {
-        startActivity(Intent(this, WeAct::class.java))
+        startActivity(Intent(this, StartScreen::class.java))
         finish()
     }
 
