@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sasha_splash_bkg"
+    android:background="@drawable/backmain"
     tools:context=".one.InitFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -106,13 +106,15 @@
         app:layout_constraintBottom_toTopOf="@id/btn_play_gameeee"/>
 
 
-    <com.google.android.material.button.MaterialButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_play_gameeee"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:background="@drawable/sasha_btn_2"
         android:fontFamily="@font/montserrat_black"
         android:text="play game"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline_hor_95gttg"

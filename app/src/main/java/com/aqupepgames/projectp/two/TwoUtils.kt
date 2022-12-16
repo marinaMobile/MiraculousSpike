@@ -78,11 +78,13 @@ object TwoUtils {
 
 
     val imgLis = listOf(
-        R.drawable.sc_gm_item_1,
-        R.drawable.sc_gm_item_2,
-        R.drawable.sc_gm_item_3,
-        R.drawable.sc_gm_item_4,
-        R.drawable.sc_gm_item_5,
+        R.drawable.sec_item_1,
+        R.drawable.sec_item_2,
+        R.drawable.sec_item_3,
+        R.drawable.sec_item_4,
+        R.drawable.sec_item_5,
+        R.drawable.sec_item_6,
+
     )
 
 

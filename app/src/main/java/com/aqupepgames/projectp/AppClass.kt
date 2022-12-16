@@ -35,20 +35,14 @@ class AppClass :Application(){
         val instID = MyTracker.getInstanceId(this)
         trackerConfig.isTrackingLaunchEnabled = true
         val IDIN = UUID.randomUUID().toString()
-//        val shIDIN = shP.getString("myId", IDIN)
 
         if (settings.getBoolean("my_first_time", true)) {
             trackerParams.setCustomUserId(IDIN)
             shP.edit().putString(myId, IDIN).apply()
             shP.edit().putString(Constant.instId, instID).apply()
-            Log.d("IDIN", "onCreate: $IDIN")
             settings.edit().putBoolean("my_first_time", false).apply()
         } else {
-//            val IDIN = Hawk.get(myID, "null")
-//            IDIN = shIDIN.toString()
             val shIDIN = shP.getString(myId, IDIN)
-            Log.d("IDIN", "onCreate: $shIDIN")
-
             trackerParams.setCustomUserId(shIDIN)
         }
         MyTracker.initTracker(myTrId, this)

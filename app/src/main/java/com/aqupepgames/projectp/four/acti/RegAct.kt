@@ -7,7 +7,9 @@ import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.ActivityRegBinding
 import com.aqupepgames.projectp.four.inapps.ProductListing
 import com.aqupepgames.projectp.one.OneGame
+import com.aqupepgames.projectp.three.TwoGame
 import com.aqupepgames.projectp.two.StartScreen
+import com.aqupepgames.projectp.two.ThreeGame
 
 class RegAct : AppCompatActivity() {
     lateinit var binding: ActivityRegBinding
@@ -21,7 +23,11 @@ class RegAct : AppCompatActivity() {
         }
 
         binding.twoBtn.setOnClickListener {
-            startActivity(Intent(this, StartScreen::class.java))
+            startActivity(Intent(this, TwoGame::class.java))
+        }
+
+        binding.threeBtn.setOnClickListener {
+            startActivity(Intent(this, ThreeGame::class.java))
         }
 
         binding.shopBtn.setOnClickListener{

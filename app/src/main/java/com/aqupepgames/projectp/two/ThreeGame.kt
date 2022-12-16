@@ -45,7 +45,7 @@ class ThreeGame : AppCompatActivity() {
                 clasodoksakoasdokasd++
                 isClicked = true
                 tvSecBSpn.alpha = 0.7f
-                if(clasodoksakoasdokasd>4) clasodoksakoasdokasd = 0
+                if(clasodoksakoasdokasd>5) clasodoksakoasdokasd = 0
                 img1SecGm.setImageResource(TwoUtils.imgLis[clasodoksakoasdokasd])
                 Handler().postDelayed({
                     img2SecGm.setImageResource(TwoUtils.imgLis[clasodoksakoasdokasd])
@@ -70,9 +70,9 @@ class ThreeGame : AppCompatActivity() {
     private fun pwqwqeqew() =with(b_sec) {
         val bonus_res = TwoUtils.listBonus[Random.nextInt(18)]
         val extra_chance = TwoUtils.listExtra[Random.nextInt(18)]
-        val img_1 = TwoUtils.imgLis[Random.nextInt(5)]
-        val img_2 = TwoUtils.imgLis[Random.nextInt(5)]
-        val img_3 = TwoUtils.imgLis[Random.nextInt(5)]
+        val img_1 = TwoUtils.imgLis[Random.nextInt(6)]
+        val img_2 = TwoUtils.imgLis[Random.nextInt(6)]
+        val img_3 = TwoUtils.imgLis[Random.nextInt(6)]
         val getOldWin = sharedPreference.getInt("win_res",0)
         val totalWin = getOldWin + extra_chance * bonus_res * 100
         val parse_total = totalWin.toInt()
