@@ -213,7 +213,7 @@ class PlayGaaaameFragment : Fragment() {
         }
 
         bindinggg.removeBet.setOnClickListener {
-            if (userBet >= 10) {
+            if (userBet >= 20) {
                 userBet -= 10
                 bindinggg.tvUserBetNumber.text = userBet.toString()
             }else{
