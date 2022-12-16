@@ -10,6 +10,7 @@ import android.os.Handler
 import com.aqupepgames.projectp.databinding.ActivityThreeGameBinding
 import com.aqupepgames.projectp.databinding.ActivityTwoGameBinding
 import com.aqupepgames.projectp.four.MainActivity
+import com.aqupepgames.projectp.four.acti.RegAct
 import kotlin.random.Random
 
 class ThreeGame : AppCompatActivity() {
@@ -90,5 +91,10 @@ class ThreeGame : AppCompatActivity() {
 
 
 
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, RegAct::class.java))
+        finish()
     }
 }

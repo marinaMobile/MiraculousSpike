@@ -108,4 +108,6 @@ class PlayGaaaameFragment : Fragment() {
             sectorDegrees55[i] = (i + 1) * singleSectorDegree88
         }
     }
+
+
 }

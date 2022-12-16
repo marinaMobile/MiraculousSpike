@@ -1,5 +1,6 @@
 package com.aqupepgames.projectp.four.inapps
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aqupepgames.projectp.AppClass
 import com.aqupepgames.projectp.databinding.ActivityProductListingBinding
+import com.aqupepgames.projectp.four.acti.RegAct
 import com.qonversion.android.sdk.Qonversion
 import com.qonversion.android.sdk.Qonversion.purchase
 import com.qonversion.android.sdk.QonversionError
@@ -72,5 +74,12 @@ class ProductListing : AppCompatActivity() {
 
             }
         })
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, RegAct::class.java))
+        finish()
     }
 }
