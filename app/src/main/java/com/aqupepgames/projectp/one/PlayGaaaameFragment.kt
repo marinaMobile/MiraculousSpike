@@ -30,14 +30,15 @@ class PlayGaaaameFragment : Fragment() {
     var totalBalance = 0
     var userBet = 50
 
-    val nhjhjjj by lazy {
-        listOf(
-            ContextCompat.getDrawable(requireActivity(), R.drawable.a1),
-            ContextCompat.getDrawable(requireActivity(), R.drawable.a2),
-            ContextCompat.getDrawable(requireActivity(), R.drawable.a3),
-            ContextCompat.getDrawable(requireActivity(), R.drawable.a4),
-        ).shuffled()
+    val ooooo by lazy {
+        mapOf(
+            "one" to ContextCompat.getDrawable(requireActivity(), R.drawable.a1),
+            "tvo" to ContextCompat.getDrawable(requireActivity(), R.drawable.a2),
+            "three" to ContextCompat.getDrawable(requireActivity(), R.drawable.a3),
+            "four" to ContextCompat.getDrawable(requireActivity(), R.drawable.a4),
+        )
     }
+
 
     private fun createAnimatorSetBack(): AnimatorSet {
         return AnimatorInflater.loadAnimator(
@@ -157,13 +158,21 @@ class PlayGaaaameFragment : Fragment() {
 
         bindinggg.tvUserScoreCount.text = totalBalance.toString()
 
+//        val user = ooooo.keys.random()
+//        val comppp = ooooo.keys.random()
+//
+//        bindinggg.imgElem1Back.setImageDrawable(ooooo.get(comppp))
+//        bindinggg.imgElem2Back.setImageDrawable(ooooo.get(user))
 
-        bindinggg.imgElem1Back.setImageDrawable(nhjhjjj.random())
-        bindinggg.imgElem2Back.setImageDrawable(nhjhjjj.random())
         bindinggg.btnGame.isEnabled = true
 
         bindinggg.btnGame.setOnClickListener {
-            if (totalBalance >0) {
+            val user22 = ooooo.keys.random()
+            val comppp222 = ooooo.keys.random()
+            bindinggg.imgElem1Back.setImageDrawable(ooooo.get(comppp222))
+            bindinggg.imgElem2Back.setImageDrawable(ooooo.get(user22))
+
+            if (totalBalance >0 && totalBalance>=userBet) {
                 bindinggg.btnGame.isEnabled = false
                 manka()
                 bgbgbgffff()
@@ -172,21 +181,19 @@ class PlayGaaaameFragment : Fragment() {
                     mashaa()
                     pasha()
                     bindinggg.btnGame.isEnabled = true
-                    bindinggg.imgElem1Back.setImageDrawable(nhjhjjj.random())
-                    bindinggg.imgElem2Back.setImageDrawable(nhjhjjj.random())
 
-                    if (Random.nextBoolean()){
-                        totalBalance = totalBalance + userBet + userBet
+                    if (user22 == comppp222){
+                        totalBalance = totalBalance + userBet
                         Snackbar.make(
                             bindinggg.root,
-                            "You win ${userBet*2}$",
+                            "You win ${userBet}$",
                             Snackbar.LENGTH_LONG
                         ).show()
                         val editPref = totalBalanceSP.edit()
                         editPref.putInt(TOTAL_BALANCE.toString(), totalBalance)
                         editPref.apply()
                     } else {
-                        totalBalance += userBet
+                        totalBalance = totalBalance - userBet
                         Snackbar.make(
                             bindinggg.root,
                             "You lose ${userBet}$",
