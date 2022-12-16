@@ -89,48 +89,69 @@ class ThreeGame : AppCompatActivity() {
         if(totalBalance!! >0){
             val random = (1..5).random()
             if(random ==1){
-                if(totalBalance!! > 300){
-                    totalBalance = totalBalance?.minus(300)
-                }
 
+                    totalBalance = totalBalance?.minus(300)
                 tvSecBalance.text = "Balance : $totalBalance"
+                if(totalBalance!!<0){
+                    totalBalance = 0
+                    tvSecBalance.text = "Balance : $totalBalance"
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
             }
             else if(random == 2){
                 if(totalBalance!!>0){
                     totalBalance = totalBalance?.plus(25)
+                    if(totalBalance!!<0){
+                        totalBalance = 0
+                        tvSecBalance.text = "Balance : $totalBalance"
+                    }
                 }
 
                 tvSecBalance.text = "Balance : $totalBalance"
             } else if(random ==3){
-                if(totalBalance!!>100){
+
                     totalBalance = totalBalance?.minus(100)
                     totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                if(totalBalance!!<0){
+                    totalBalance = 0
+                    tvSecBalance.text = "Balance : $totalBalance"
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
+
 
                 tvSecBalance.text = "Balance : $totalBalance"
             } else if(random == 4){
 
                 tvSecBalance.text = "Balance : $totalBalance"
-                if(totalBalance!!>0){
                     totalBalance = totalBalance?.plus(30)
                     totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                if(totalBalance!!<0){
+                    totalBalance = 0
+                    tvSecBalance.text = "Balance : $totalBalance"
                 }
+
 
             }
             else if(random == 5){
-                if(totalBalance!!>75){
                     totalBalance = totalBalance?.minus(75)
                     totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
-                }
-
                 tvSecBalance.text = "Balance : $totalBalance"
+                if(totalBalance!!<0){
+                    totalBalance = 0
+                    tvSecBalance.text = "Balance : $totalBalance"
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                }
             }
 
             else if(random == 6){
-                if(totalBalance!!>0){
                     totalBalance = totalBalance?.plus(5)
                     totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
+                if(totalBalance!!<0){
+                    totalBalance = 0
+                    tvSecBalance.text = "Balance : $totalBalance"
+                    totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
                 }
+
 
                 tvSecBalance.text = "Balance : $totalBalance"
             }
@@ -158,8 +179,8 @@ class ThreeGame : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
 
-            // startActivity(Intent(this, RegAct::class.java))
-        //finish()
+            startActivity(Intent(this, StartScreen::class.java))
+        finish()
 
     }
 
