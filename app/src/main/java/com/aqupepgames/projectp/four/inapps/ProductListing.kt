@@ -43,11 +43,6 @@ class ProductListing : AppCompatActivity() {
                 mainProducts?.let {
                     binding.recyclerViewProductsList.adapter = ProductsAdapter(it) { product ->
                         purchase(product)
-                        if (product.qonversionID.equals("coin_offer_s")){
-                            val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-                            val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
-                            totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+200).apply()
-                        }
                     }
 
                 } ?:  Toast.makeText(this@ProductListing, "There are no products in main offering", Toast.LENGTH_LONG).show()
@@ -66,11 +61,29 @@ class ProductListing : AppCompatActivity() {
             QonversionPermissionsCallback {
             override fun onSuccess(entitlements: Map<String, QPermission>) {
                 Toast.makeText(this@ProductListing, "Purchase succeeded", Toast.LENGTH_LONG).show()
-
-
+                if (product.qonversionID == "coin_offer_s"){
+                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
+                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+200).apply()
+                }
+                if (product.qonversionID == "coin_offer_m"){
+                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
+                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+600).apply()
+                }
+                if (product.qonversionID == "coin_offer_l"){
+                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
+                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+1200).apply()
+                }
+                if (product.qonversionID == "coin_offer_xl"){
+                    val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+                    val totalB = totalBalanceSP.getInt(AppClass.TOTAL_BALANCE.toString(), 0)
+                    totalBalanceSP.edit().putInt(AppClass.TOTAL_BALANCE.toString(), totalB+2500).apply()
+                }
             }
-
             override fun onError(error: QonversionError) {
+                Toast.makeText(this@ProductListing, "Purchase was unsuccessful. Try Again Later!", Toast.LENGTH_LONG).show()
 
             }
         })

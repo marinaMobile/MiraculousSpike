@@ -21,6 +21,8 @@ class TwoGame : AppCompatActivity() {
         bindMachineGame = ActivityTwoGameBinding.inflate(layoutInflater)
         setContentView(bindMachineGame.root)
 
+        var wheel = bindMachineGame.wheeeel
+
         //inital set
         var scoreInt = 10
         bindMachineGame.scoreText.text = scoreInt.toString()
@@ -52,10 +54,16 @@ class TwoGame : AppCompatActivity() {
 
 
         bindMachineGame.blackBtn.setOnClickListener{
+            wheel.animate().apply {
+                rotation(wheel.rotation + 180F)
+                duration = 2000
+                start()
+            }
+
             if(totalBalance!=0) {
                 totalBalance = totalBalance?.minus(scoreInt)
                 bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
-                bindMachineGame.wheeeel.rotation = 180F
+
 
                 val rnds = (1..2).random()
 
@@ -63,6 +71,10 @@ class TwoGame : AppCompatActivity() {
                     totalBalance = totalBalance?.plus(scoreInt*2)
                     bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
                     bindMachineGame.gameStatusTextView.text = "Black! You have won!"
+                } else
+                {
+                    bindMachineGame.gameStatusTextView.text = "Red! Better luck next time!"
+
                 }
             } else {
                 Toast.makeText(this, "Your balance is 0", Toast.LENGTH_SHORT).show()
@@ -72,17 +84,24 @@ class TwoGame : AppCompatActivity() {
 
 
         bindMachineGame.redBtn.setOnClickListener{
+            wheel.animate().apply {
+                rotation(wheel.rotation + 180F)
+                duration = 2000
+                start()
+            }
+
             if(totalBalance!=0) {
                 totalBalance = totalBalance?.minus(scoreInt)
                 bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
-
-                bindMachineGame.wheeeel.rotation = 180F
                 val rnds = (1..2).random()
 
                 if (rnds == 1){
                     totalBalance = totalBalance?.plus(scoreInt*2)
                     bindMachineGame.totalBalanceTxtView.text = totalBalance.toString()
                     bindMachineGame.gameStatusTextView.text = "Red! You have won!"
+                } else {
+                    bindMachineGame.gameStatusTextView.text = "Black! Better luck next time!"
+
                 }
 
             } else {
