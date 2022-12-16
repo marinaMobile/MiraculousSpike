@@ -129,7 +129,7 @@
         android:id="@+id/tv_sec_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Extra chance : x0.1"
+        android:text="Balance : 1000"
         android:includeFontPadding="false"
         android:fontFamily="@font/jost_bold"
         android:textStyle="bold"
