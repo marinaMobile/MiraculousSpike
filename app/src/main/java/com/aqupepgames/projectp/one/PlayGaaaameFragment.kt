@@ -8,21 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.DecelerateInterpolator
-import android.view.animation.RotateAnimation
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.aqupepgames.projectp.AppClass
 import com.aqupepgames.projectp.AppClass.Companion.TOTAL_BALANCE
 import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.FragmentPlayGaaaameBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlin.random.Random
 
 
 class PlayGaaaameFragment : Fragment() {
@@ -158,11 +152,6 @@ class PlayGaaaameFragment : Fragment() {
 
         bindinggg.tvUserScoreCount.text = totalBalance.toString()
 
-//        val user = ooooo.keys.random()
-//        val comppp = ooooo.keys.random()
-//
-//        bindinggg.imgElem1Back.setImageDrawable(ooooo.get(comppp))
-//        bindinggg.imgElem2Back.setImageDrawable(ooooo.get(user))
 
         bindinggg.btnGame.isEnabled = true
 
@@ -249,35 +238,8 @@ class PlayGaaaameFragment : Fragment() {
 
     }
 
-//                override fun onAnimationEnd(p0: Animation?) {
-//                    val userResult = sectorsgtgt[winnerNumber]
-//                    Toast.makeText(
-//                        requireContext(),
-//                        "$userResult$",
-//                        Toast.LENGTH_SHORT
-//                    )
-//                        .show()
-//                    isSpinninggg = false
-//
-//                    userScore += userResult
-//                    bindinggg.userScoreCount.text = userScore.toString()
-//
-//                }
-//                override fun onAnimationRepeat(p0: Animation?) {
-//                }
-//            })
-//            bindinggg.imgWheelElementMain.startAnimation(rotateAnimationgttg)
-//        }
-//    }
-
     override fun onDestroy() {
         _bindinggg = null
         super.onDestroy()
     }
-//
-//    private fun bgbggbbggb() {
-//        for (i in sectorsgtgt.indices) {
-//            sectorDegrees55[i] = (i + 1) * singleSectorDegree88
-//        }
-//    }
 }

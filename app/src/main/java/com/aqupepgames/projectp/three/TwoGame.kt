@@ -21,7 +21,7 @@ class TwoGame : AppCompatActivity() {
         bindMachineGame = ActivityTwoGameBinding.inflate(layoutInflater)
         setContentView(bindMachineGame.root)
 
-        var wheel = bindMachineGame.wheeeel
+        val wheel = bindMachineGame.wheeeel
 
         //inital set
         var scoreInt = 10
@@ -39,6 +39,14 @@ class TwoGame : AppCompatActivity() {
                 bindMachineGame.minusBtn.isClickable = true
                 bindMachineGame.scoreText.textSize = 36F
             }
+            val balanceCurrent = bindMachineGame.totalBalanceTxtView.text.toString()
+            val balanceCurrentInt = balanceCurrent.toInt()
+
+            if (scoreInt==balanceCurrentInt){
+                bindMachineGame.plusBtn.isClickable = false
+            }
+
+
         }
 
         bindMachineGame.minusBtn.setOnClickListener {
@@ -49,6 +57,12 @@ class TwoGame : AppCompatActivity() {
                 bindMachineGame.scoreText.text = "Can't go lower than 10"
                 bindMachineGame.scoreText.textSize = 24F
                 bindMachineGame.minusBtn.isClickable = false
+            }
+
+            val balanceCurrent = bindMachineGame.totalBalanceTxtView.text.toString()
+            val balanceCurrentInt = balanceCurrent.toInt()
+            if (scoreInt<balanceCurrentInt){
+                bindMachineGame.plusBtn.isClickable = true
             }
             //failsafe from going negative
 
