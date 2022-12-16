@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.TableRowProductBinding
 import com.qonversion.android.sdk.dto.offerings.QOffering
 import com.qonversion.android.sdk.dto.offerings.QOfferings
@@ -40,7 +41,7 @@ class ProductsAdapter(
         }
 
         fun bind(product: QProduct) = with(itemView) {
-            binding.txtName.text = product.qonversionID
+            binding.txtName.setImageResource(R.drawable.sc_gm_item_1)
             binding.txtDescription.text = product.skuDetail?.description
             binding.txtPrice.text = product.skuDetail?.price
         }

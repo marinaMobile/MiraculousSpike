@@ -8,7 +8,7 @@
     android:showDividers="middle"
     android:weightSum="3">
 
-    <TextView
+    <ImageView
         android:id="@+id/txtName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -20,20 +20,25 @@
     <TextView
         android:id="@+id/txtDescription"
         android:layout_width="0dp"
+        android:textSize="32dp"
+        android:fontFamily="@font/jost_bold"
+
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:text="@string/description"
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/txtPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:fontFamily="@font/jost_bold"
+        android:textSize="32dp"
         android:divider="?android:dividerHorizontal"
         android:gravity="center"
         android:text="@string/price"
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
 </LinearLayout>
