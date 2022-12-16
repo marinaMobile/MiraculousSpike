@@ -1,13 +1,17 @@
 package com.aqupepgames.projectp.one
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.aqupepgames.projectp.AppClass
 import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.FragmentInitBinding
+import com.aqupepgames.projectp.four.acti.RegAct
 import com.google.android.material.snackbar.Snackbar
 
 class InitFragment : Fragment() {
@@ -35,8 +39,23 @@ class InitFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         try {
 
-            ssskkaa.btnPlayGameeee.setOnClickListener {
+            ssskkaa.clooose.setOnClickListener {
+                val intent = Intent(requireActivity(), RegAct::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+
+
+
+            ssskkaa.imgNext.setOnClickListener {
+
+
+
+
                 findNavController().navigate(R.id.action_initFragment_to_playGaaaameFragment)
+            }
+            ssskkaa.imgPrevious.setOnClickListener {
+                requireActivity().onBackPressed()
             }
 
             ssskkaa.imgInfo.setOnClickListener {

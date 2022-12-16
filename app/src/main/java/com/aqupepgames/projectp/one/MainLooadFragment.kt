@@ -62,10 +62,6 @@ class MainLooadFragment : Fragment() {
         try {
 
             hyhyhyhy()
-// here remove
-//            Handler(Looper.myLooper()!!).postDelayed({
-//                findNavController().navigate(R.id.action_mainLooadFragment_to_initFragment)
-//            }, SPLASH_SCREEN_TIMEggtgttg)
 
 
         } catch (e: Exception) {

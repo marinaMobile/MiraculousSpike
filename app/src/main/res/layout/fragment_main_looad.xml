@@ -12,7 +12,7 @@
         android:id="@+id/img_logo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/sasha_loading_logo"
+        android:src="@drawable/sasha_logo_22"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1,1"
         app:layout_constraintEnd_toEndOf="parent"

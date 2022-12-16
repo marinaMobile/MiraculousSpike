@@ -1,5 +1,8 @@
 package com.aqupepgames.projectp.one
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,23 +11,132 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.RotateAnimation
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import com.aqupepgames.projectp.AppClass
+import com.aqupepgames.projectp.AppClass.Companion.TOTAL_BALANCE
+import com.aqupepgames.projectp.R
 import com.aqupepgames.projectp.databinding.FragmentPlayGaaaameBinding
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 
 class PlayGaaaameFragment : Fragment() {
 
-    var userScore = OneGame.currentBalance
+    var totalBalance = 0
+    var userBet = 50
+
+    val nhjhjjj by lazy {
+        listOf(
+            ContextCompat.getDrawable(requireActivity(), R.drawable.a1),
+            ContextCompat.getDrawable(requireActivity(), R.drawable.a2),
+            ContextCompat.getDrawable(requireActivity(), R.drawable.a3),
+            ContextCompat.getDrawable(requireActivity(), R.drawable.a4),
+        ).shuffled()
+    }
+
+    private fun createAnimatorSetBack(): AnimatorSet {
+        return AnimatorInflater.loadAnimator(
+            requireContext().applicationContext,
+            R.animator.back_animator
+        ) as AnimatorSet
+    }
+
+    private fun createAnimatorSetFront(): AnimatorSet {
+        return AnimatorInflater.loadAnimator(
+            requireContext().applicationContext,
+            R.animator.front_animator
+        ) as AnimatorSet
+    }
+
+    private val bgbgvvfv by lazy {
+        createAnimatorSetFront()
+    }
+
+    private val xcvvvv by lazy {
+        createAnimatorSetBack()
+    }
+
+    private fun fanka(
+        frontAnim: AnimatorSet,
+        backAnim: AnimatorSet,
+        elemFront: ImageView,
+        elemBack: ImageView
+    ) {
+        frontAnim.setTarget(elemBack)
+        backAnim.setTarget(elemFront)
+        frontAnim.start()
+        backAnim.start()
+    }
+
+    private fun mashaa() {
+        fanka(
+            bgbgvvfv,
+            xcvvvv,
+            bindinggg.imgElem1,
+            bindinggg.imgElem1Back
+        )
+    }
+
+    private fun mashaa1() {
+        fanka(
+            bgbgvvfv,
+            xcvvvv,
+            bindinggg.imgElem2,
+            bindinggg.imgElem2Back
+        )
+    }
 
 
-    private val sectorsgtgt = arrayOf(700, 1000, -100, 200, -500)
-    private val sectorDegrees55 = sectorsgtgt.clone()
-    private val singleSectorDegree88 = 360 / sectorsgtgt.size
-    private var isSpinninggg = false
+    private var _bindinggg: com.aqupepgames.projectp.databinding.FragmentPlayGaaaameBinding? = null
+    private val bindinggg
+        get() = _bindinggg ?: throw RuntimeException("FragmentPlayGaaaameBinding = null")
 
-    private var _bindinggg: FragmentPlayGaaaameBinding? = null
-    private val bindinggg get() = _bindinggg ?: throw RuntimeException("FragmentPlayGaaaameBinding = null")
+    private fun manka() {
+        bvbvbbvvbvbvb(
+            bgbgvvfv, xcvvvv, bindinggg.imgElem1, bindinggg.imgElem1Back
+        )
+    }
+
+    private fun bvbvbbvvbvbvb(
+        frontAnim: AnimatorSet,
+        backAnim: AnimatorSet,
+        elemFront: ImageView,
+        elemBack: ImageView
+    ) {
+        frontAnim.setTarget(elemFront)
+        backAnim.setTarget(elemBack)
+        frontAnim.start()
+        backAnim.start()
+    }
+
+    private val vfvfvffv by lazy {
+        createAnimatorSetFront()
+    }
+
+    private val nhbbbbggb by lazy {
+        createAnimatorSetBack()
+    }
+
+
+    private fun bgbgbgffff() {
+        bvbvbbvvbvbvb(
+            vfvfvffv, nhbbbbggb, bindinggg.imgElem2, bindinggg.imgElem2Back
+        )
+    }
+
+    private fun pasha() {
+        fanka(
+            vfvfvffv,
+            nhbbbbggb,
+            bindinggg.imgElem2,
+            bindinggg.imgElem2Back
+        )
+    }
 
 
     override fun onCreateView(
@@ -36,76 +148,105 @@ class PlayGaaaameFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        bindinggg.tvUserBetNumber.text = userBet.toString()
 
-        bindinggg.userScoreCount.text = userScore.toString()
+        val totalBalanceSP = requireActivity().getSharedPreferences("TOTAL_BAL_SP",
+            Context.MODE_PRIVATE
+        )
+        totalBalance = totalBalanceSP.getInt(TOTAL_BALANCE.toString(), 0)
 
-        initExitBtnbgbg()
-        bgbggbbggb()
-        bindinggg.btnGameFortuneSpin.setOnClickListener {
-            if (!isSpinninggg) {
-                nnnnnnnsppiin()
-                isSpinninggg = true
+        bindinggg.tvUserScoreCount.text = totalBalance.toString()
+
+
+        bindinggg.imgElem1Back.setImageDrawable(nhjhjjj.random())
+        bindinggg.imgElem2Back.setImageDrawable(nhjhjjj.random())
+        bindinggg.btnGame.isEnabled = true
+
+        bindinggg.btnGame.setOnClickListener {
+            if (totalBalance >0) {
+                bindinggg.btnGame.isEnabled = false
+                manka()
+                bgbgbgffff()
+                lifecycleScope.launch {
+                    delay(2000)
+                    mashaa()
+                    pasha()
+                    bindinggg.btnGame.isEnabled = true
+                    bindinggg.imgElem1Back.setImageDrawable(nhjhjjj.random())
+                    bindinggg.imgElem2Back.setImageDrawable(nhjhjjj.random())
+
+                    if (Random.nextBoolean()){
+                        totalBalance = totalBalance + userBet + userBet
+                        Snackbar.make(
+                            bindinggg.root,
+                            "You win ${userBet*2}$",
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                        val editPref = totalBalanceSP.edit()
+                        editPref.putInt(TOTAL_BALANCE.toString(), totalBalance)
+                        editPref.apply()
+                    } else {
+                        totalBalance += userBet
+                        Snackbar.make(
+                            bindinggg.root,
+                            "You lose ${userBet}$",
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                        val editPref = totalBalanceSP.edit()
+                        editPref.putInt(TOTAL_BALANCE.toString(), totalBalance)
+                        editPref.apply()
+                    }
+                    bindinggg.tvUserScoreCount.text = totalBalance.toString()
+                }
+
+                val editPref = totalBalanceSP.edit()
+                editPref.putInt(TOTAL_BALANCE.toString(), totalBalance)
+                editPref.apply()
+
+            } else {
+                Snackbar.make(
+                    bindinggg.root,
+                    "Your balance is less than 10",
+                    Snackbar.LENGTH_LONG
+                ).show()
             }
         }
+
+        bindinggg.removeBet.setOnClickListener {
+            if (userBet >= 10) {
+                userBet -= 10
+                bindinggg.tvUserBetNumber.text = userBet.toString()
+            }else{
+                Snackbar.make(
+                    bindinggg.root,
+                    "Bet can`t be lower than 10",
+                    Snackbar.LENGTH_LONG
+                ).show()
+            }
+        }
+
+        bindinggg.addBet.setOnClickListener {
+            userBet = userBet + 10
+            bindinggg.tvUserBetNumber.text = userBet.toString()
+
+        }
+
+        initExitBtnbgbg()
+
 
         super.onViewCreated(view, savedInstanceState)
     }
 
+
     private fun initExitBtnbgbg() {
-        bindinggg.btnImgExitVheelGame.setOnClickListener {
-            requireActivity().onBackPressed()
-        }
+
     }
 
-    private fun nnnnnnnsppiin() {
-        val winnerNumber = Random.nextInt(sectorsgtgt.size - 1)
-
-        val needAddRotategttg = (360 - winnerNumber * singleSectorDegree88).toFloat()
-        val rotateAnimationgttg = RotateAnimation(
-            0f,
-            (360f * sectorsgtgt.size) + needAddRotategttg,
-            RotateAnimation.RELATIVE_TO_SELF,
-            0.5f,
-            RotateAnimation.RELATIVE_TO_SELF,
-            0.5f
-        )
-        rotateAnimationgttg.apply {
-            duration = 1000
-            fillAfter = true
-            interpolator = DecelerateInterpolator()
-            setAnimationListener(object : Animation.AnimationListener {
-                override fun onAnimationStart(p0: Animation?) {
-                }
-
-                override fun onAnimationEnd(p0: Animation?) {
-                    val userResult = sectorsgtgt[winnerNumber]
-                    Toast.makeText(
-                        requireContext(),
-                        "$userResult$",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                    isSpinninggg = false
-
-                    userScore += userResult
-                    bindinggg.userScoreCount.text = userScore.toString()
-
-                }
-                override fun onAnimationRepeat(p0: Animation?) {
-                }
-            })
-            bindinggg.imgWheelElementMain.startAnimation(rotateAnimationgttg)
-        }
-    }
 
     override fun onDestroy() {
         _bindinggg = null
         super.onDestroy()
     }
 
-    private fun bgbggbbggb() {
-        for (i in sectorsgtgt.indices) {
-            sectorDegrees55[i] = (i + 1) * singleSectorDegree88
-        }
-    }
+
 }
