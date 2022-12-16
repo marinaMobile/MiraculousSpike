@@ -35,21 +35,23 @@ class TwoGame : AppCompatActivity() {
         bindMachineGame.plusBtn.setOnClickListener {
             scoreInt += 10
             bindMachineGame.scoreText.text = scoreInt.toString()
+            if (scoreInt >0){
+                bindMachineGame.minusBtn.isClickable = true
+                bindMachineGame.scoreText.textSize = 36F
+            }
         }
 
         bindMachineGame.minusBtn.setOnClickListener {
             scoreInt -= 10
             bindMachineGame.scoreText.text = scoreInt.toString()
 
-
-            //failsafe from going negative
             if (scoreInt == 0){
-                bindMachineGame.scoreText.text = "Can't go lower than 0"
+                bindMachineGame.scoreText.text = "Can't go lower than 10"
+                bindMachineGame.scoreText.textSize = 24F
                 bindMachineGame.minusBtn.isClickable = false
-            } else{
-                bindMachineGame.minusBtn.isClickable = true
-
             }
+            //failsafe from going negative
+
         }
 
 

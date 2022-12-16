@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.widget.Toast
+import com.aqupepgames.projectp.AppClass.Companion.TOTAL_BALANCE
 import com.aqupepgames.projectp.databinding.ActivityThreeGameBinding
 import com.aqupepgames.projectp.databinding.ActivityTwoGameBinding
 import com.aqupepgames.projectp.four.MainActivity
@@ -26,8 +27,13 @@ class ThreeGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         b_sec = ActivityThreeGameBinding.inflate(layoutInflater)
         setContentView(b_sec.root)
+
+        //импортед
         val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-       // totalBalance = totalBalanceSP.getInt(TOTAL_BALANCE.toString(), 0)
+        totalBalance = totalBalanceSP.getInt(TOTAL_BALANCE.toString(), 0)
+        //импортед
+
+
         b_sec.tvSecBalance.text = "Balance : $totalBalance"
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val def_txt_win = sharedPreference.getInt("win_res",winRes)
