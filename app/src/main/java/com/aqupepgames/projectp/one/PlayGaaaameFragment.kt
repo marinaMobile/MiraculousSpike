@@ -172,10 +172,10 @@ class PlayGaaaameFragment : Fragment() {
                     bindinggg.btnGame.isEnabled = true
 
                     if (user22 == comppp222){
-                        totalBalance = totalBalance + userBet
+                        totalBalance += userBet * 4
                         Snackbar.make(
                             bindinggg.root,
-                            "You win ${userBet}$",
+                            "You win ${userBet*4} coins",
                             Snackbar.LENGTH_LONG
                         ).show()
                         val editPref = totalBalanceSP.edit()
@@ -185,7 +185,7 @@ class PlayGaaaameFragment : Fragment() {
                         totalBalance = totalBalance - userBet
                         Snackbar.make(
                             bindinggg.root,
-                            "You lose ${userBet}$",
+                            "You lose ${userBet} coins",
                             Snackbar.LENGTH_LONG
                         ).show()
                         val editPref = totalBalanceSP.edit()
@@ -222,7 +222,7 @@ class PlayGaaaameFragment : Fragment() {
         }
 
         bindinggg.addBet.setOnClickListener {
-            userBet = userBet + 10
+            userBet += 10
             bindinggg.tvUserBetNumber.text = userBet.toString()
 
         }

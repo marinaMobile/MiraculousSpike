@@ -25,6 +25,7 @@ class AppClass :Application(){
 
     companion object{
         var TOTAL_BALANCE = 1000
+        var USER_NAME: String? = "null"
     }
 
 
