@@ -19,6 +19,7 @@ class ThreeGame : AppCompatActivity() {
     private lateinit var b_sec : ActivityThreeGameBinding
     private var isClicked = false
     private lateinit var sharedPreference : SharedPreferences
+    private lateinit var totalSharedPref : SharedPreferences
     private var pqwoeqfw: CountDownTimer? = null
     private var winRes = 0
     var totalBalance: Int? = 0
@@ -27,13 +28,8 @@ class ThreeGame : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         b_sec = ActivityThreeGameBinding.inflate(layoutInflater)
         setContentView(b_sec.root)
-
-        //импортед
-        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
-        totalBalance = totalBalanceSP.getInt(TOTAL_BALANCE.toString(), 0)
-        //импортед
-
-
+        totalSharedPref = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+       // totalBalance = totalSharedPref.getInt(TOTAL_BALANCE.toString(), 0)
         b_sec.tvSecBalance.text = "Balance : $totalBalance"
         sharedPreference = getSharedPreferences("win_res", Context.MODE_PRIVATE)
         val def_txt_win = sharedPreference.getInt("win_res",winRes)
@@ -91,28 +87,34 @@ class ThreeGame : AppCompatActivity() {
         val img_3 = TwoUtils.imgLis[Random.nextInt(6)]
         if(img_1 == 3 || img_2 == 5 || img_3 == 6){
             totalBalance = totalBalance?.minus(100)
+           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
         if(img_1 == 2 || img_2 ==3 || img_3 == 4){
-            totalBalance = totalBalance?.plus(50)
+            totalBalance = totalBalance?.plus(10)
+          //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
         if(img_1 == 1 && img_2 == 1 && img_3 ==1) {
-            totalBalance = totalBalance?.plus(150)
+            totalBalance = totalBalance?.plus(20)
+          //  totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
 
         if (img_1 ==3 && img_2 ==3 && img_3 == 3){
             totalBalance = totalBalance?.minus(300)
+           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
         if(img_1 == 2 && img_2 == 1 || img_3 == 4 && img_1 == 5){
-            totalBalance = totalBalance?.minus(150)
+            totalBalance = totalBalance?.minus(250)
+           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
 
         if(img_1 == 3 && img_2 == 4 || img_3 == 6 && img_1 == 5){
-            totalBalance = totalBalance?.plus(75)
+            totalBalance = totalBalance?.plus(30)
+           // totalSharedPref.edit().putInt(TOTAL_BALANCE.toString(), totalBalance!!).apply()
             tvSecBalance.text = "Balance : $totalBalance"
         }
         val totalWin = totalBalance?.times(bonus_res)
@@ -131,9 +133,34 @@ class ThreeGame : AppCompatActivity() {
 
 
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
-        startActivity(Intent(this, RegAct::class.java))
+
+        val finalBalanceString = b_sec.tvSecBalance.text.toString()
+        val finalBalance = finalBalanceString.toInt()
+        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+       // totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
+
+       // startActivity(Intent(this, RegAct::class.java))
         finish()
+
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val finalBalanceString = b_sec.tvSecBalance.text.toString()
+        val finalBalance = finalBalanceString.toInt()
+        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+      //  totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        val finalBalanceString = b_sec.tvSecBalance.text.toString()
+        val finalBalance = finalBalanceString.toInt()
+        val totalBalanceSP = getSharedPreferences("TOTAL_BAL_SP", MODE_PRIVATE)
+       // totalBalanceSP.edit().putInt(TOTAL_BALANCE.toString(), finalBalance).apply()
+    }
+
 }
